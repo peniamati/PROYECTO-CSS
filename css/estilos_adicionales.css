@@ -1,0 +1,443 @@
+/***********************************************
+
+Autores: Peña Matias - Macchia Sebastian
+
+***********************************************/
+
+/* ORGANIZAR LAS DECLARACIONES EN BLOQUES*/
+
+
+/* ESTILOS GENERALES*/
+*{
+  max-width: 1000px;
+}
+/* Colores */
+/* Color negro */
+:root{
+  --color-letra1: #d90429;
+}
+/* Color azul */
+:root{
+  --color-fondo2: #14213d;
+}
+
+/* Gris oscuro */
+:root{
+  --color-fondo: #8d99ae;
+}
+
+/* Naranja */
+:root{
+  --color-letra3: #386641;
+}
+
+/*  Amarillo */
+:root{
+  --color-fondo3: #e5e5e5;
+}
+
+/* Crema */
+:root{
+  --color-letra2: #372549;
+}
+
+body{
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* ESTILOS DE CABECERA PRINCIPAL*/
+.main-header{
+  background-color: var(--color-fondo2);
+  flex-wrap: wrap;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.main-header img{
+  height: 100%;
+  position: absolute;
+  left: 300px;
+  width: 85px;
+  height: auto;
+  
+}
+
+.main-header h1{
+  left: 15px;
+  position: absolute;
+  text-align: center;
+  color: var(--color-letra1);
+}
+.notifications{
+  background-color: var(--color-fondo3);
+  border: var(--color-fondo3) solid 10px;
+  border-radius: 10px;
+  position: absolute;
+  left: 900px;
+}
+.notification-icon:hover{
+  animation: campana 5s infinite;
+}
+
+/* animacion campanita */
+@keyframes campana{
+  0% { rotate: 0deg; }
+  10% { rotate: 30deg; }
+  30% { rotate: -30deg; }
+  45% { rotate:  20deg; }
+  55% { rotate:  -20deg; }
+  60% { rotate: 0deg; }
+  70% { rotate: 30deg; }
+  80% { rotate: -30deg; }
+  90% { rotate: 20deg; }
+  100% { rotate: 0deg; }
+}
+
+/* ESTILOS DE BARRA DE NAVEGACIÓN */
+.main-menu{
+  background-color: var(--color-fondo3); 
+  width: 220px;
+  padding: 5px 0px 5px 5px;
+  justify-content: space-between;
+}  
+
+
+.menu-group > h2{
+  padding-top: 10px;
+  padding-left: 20px;
+  font-size: 25px;
+}
+.menu-group{
+  display: flex;
+  flex-direction: column;
+  color: var(--color-letra2);
+}
+
+.notifications{
+  position: absolute;
+}
+.menu-group > a{
+  text-decoration: none;
+  padding: 10px 5px;
+  color: var(--color-letra3);
+}
+
+
+.menu-group > a:hover{  
+  background-color: var(--color-fondo2);
+  font-size: 15px;
+}
+
+main{
+  width: 780px;
+  background-color: var(--color-fondo);
+}
+
+
+/* cajas y ofertas exclusivas */
+.exclusive-offers{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.exclusive-offers h2{
+  width: 100%;
+  color: var(--color-letra2);
+}
+.art-offer{
+  display: flex;
+  background-color:var(--color-fondo3);
+  color: var(--color-letra2);
+  flex-direction: row;
+
+  justify-content: space-evenly;
+}
+
+.art-offer>header{
+  width: 300px;
+}
+.art-offer>header>h3{
+  color: var(--color-letra2);
+  font-size: 1rem;
+  border-bottom: var(--color-fondo2) dashed 2px;
+}
+
+
+.art-offer>img{
+  width: 120px;
+  height: 120px;  
+  /* margin-top: 5px; */
+
+}
+.art-offer>header>p{
+  color: var(--color-letra3);
+  font-size: 1.5rem;
+}
+
+header>p::after{
+  content: "$"attr(data-art-old-price);
+  color: var(--color-letra1);
+  text-decoration: line-through;
+  font-size: 1rem;
+}
+
+header>p::before{
+  content: "Ahora:";
+}
+
+
+.art-details{
+  text-align: center;
+  border-top: var(--color-fondo2) solid 1px;
+  height: 100px;
+
+}
+
+.art-details h4{
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+
+.art-offer footer{
+  display: flex;
+  flex-direction:row;
+  flex-wrap: nowrap;
+  border-top: var(--color-fondo2) solid 1px;
+  justify-content: space-around;
+}
+.art-offer footer p{
+  font-size: 1.1rem;
+}
+.art-offer footer button{
+  width: 70px;
+  /* bottom: 3px; */
+  background-color: var(--color-fondo);
+  color: var(--color-letra2);
+  border-radius: 5px;
+}
+
+.art-offer footer>button:hover{
+  background-color: var(--color-fondo2);
+  color: var(--color-fondo3);
+}
+
+/* PLANTILLA DE PRODUCTOS */
+.card{
+    background-color: var(--color-naranja);
+}
+
+
+/* CONTROL DE STOCK */
+
+.stock-alert{
+    width: 110px;
+    height: 60px;
+}
+
+/* COTIZACION DOLAR */
+.loading{
+    width: 100px;
+}
+.loading-item{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: lightblue;
+}
+.currency>p{
+    display: none;
+}
+
+/* menu de contacto en posicion fixed */
+.contact-support{
+  position: fixed;
+  bottom: 50px;
+  border: var(--color-fondo2) solid 3px;
+  color: var(--color-letra2);
+  border-radius: 10px;
+  background-color: var(--color-fondo3);
+  left: 870px;
+}
+
+.contact-text{
+  position: relative;
+  top: -6px;
+  right: 2px;
+}
+/* FOOTER */
+.main-footer{
+    background-color: violet;
+}
+
+.activity{
+  position:relative;
+  background-color: var(--color-fondo3);
+  width: 750px;
+  margin-left: 20px;
+  
+}
+.activity h2{
+  text-align: center;
+  color: var(--color-letra3);
+  margin-bottom: 20px;
+}
+
+table{
+  width: 730px;
+  text-align: center;
+}
+
+/* .cards{
+  width: 400px;
+  height: 350px;
+  text-align: center;
+  background-color: var(--color-fondo3);
+  left: 20px;
+  bottom: 50px;
+  position: relative;
+  
+}
+
+.card{
+  width: 250px;
+  height: 150px;
+  overflow: hidden; 
+  position: relative; 
+  border: 2px solid var(--color-letra3);
+  position: absolute;
+  display: flex;
+}
+
+.card >img:hover{
+  box-shadow: var(--color-fondo2);
+  transition: 2s;
+}
+.card>img{
+  width: 250px;
+  height: 150px;
+  border-radius: 5px ;
+  position: absolute;
+  top: 0;
+} */
+
+/* .cards {
+  position: relative;
+  height: 300px;
+  width: 350px;
+  text-align: center;
+}
+
+.card {
+  width: 300px;
+  height: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+
+}
+
+.card>img{
+  width: 250px;
+  height: 180px;
+
+}
+
+.card:hover{
+  top: -1em;
+  
+}
+
+
+
+.card h3{
+  font-weight: 600;
+  color: var(--color-letra1);
+
+}
+
+.card>p{
+  border-radius: 25px;
+  color: var(--color-letra3);
+  font-weight: 600;
+
+} */
+
+/* CONTROL DE STOCK */
+.stock-control{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  width: 550px;
+  height: 150px;
+  border: var(--color-fondo2) solid 1px;
+  background-color: var(--color-fondo3);
+  color: var(--color-letra3);
+  margin-left: 10px;
+  border-radius: 25px ;
+  position: relative;
+}
+.stock-control>h2{
+  position: absolute;
+  text-align: center;
+}
+.stock-alert{
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 160px;
+  height: 90px;
+  color: var(--color-fondo);
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+
+.stock-alert::before{
+  content: "Quedan " attr(data-stock) " productos";
+  top: 60px;
+  position: absolute;
+
+}
+.stock-alert::after{
+  content: "Stock: " attr(data-alert-level);
+  position: absolute;
+  top: 80px;
+
+}
+.stock-alert:nth-of-type(1){
+  background-color: var(--color-letra1);
+}
+.stock-alert:nth-of-type(2){
+  background-color: var(--color-letra2);
+}
+.stock-alert:nth-of-type(3){
+  background-color: var(--color-letra3);
+}
+
+/* COTIZACION DEL DOLAR */
+/* .currency{
+  width: 300px;
+  height: 150px;
+  position: relative;
+
+} */
+
+/* FOOTER */
+.main-footer{
+  background-color: var(--color-fondo2);
+  color: var(--color-letra1);
+  font-size: 1.5rem;
+  width: 100%; 
+  text-align: center;
+}
+/* ESTILOS DE ...*/ 

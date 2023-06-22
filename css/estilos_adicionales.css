@@ -75,28 +75,27 @@ body{
   color: var(--color-letra1);
 }
 .notifications{
-  background-color: var(--color-fondo3);
-  border: var(--color-fondo3) solid 10px;
+  color: var(--color-letra1);
   border-radius: 10px;
   position: absolute;
   left: 900px;
 }
+
+.notifications .notification-counter {
+  font-size: 1.5rem;
+}
 .notification-icon:hover{
-  animation: campana 5s infinite;
+  color: var(--color-fondo3);
+  animation: campana 0.3s infinite;
+  cursor: pointer;
 }
 
 /* animacion campanita */
 @keyframes campana{
   0% { rotate: 0deg; }
-  10% { rotate: 30deg; }
-  30% { rotate: -30deg; }
-  45% { rotate:  20deg; }
-  55% { rotate:  -20deg; }
-  60% { rotate: 0deg; }
-  70% { rotate: 30deg; }
-  80% { rotate: -30deg; }
-  90% { rotate: 20deg; }
-  100% { rotate: 0deg; }
+  33% { rotate: 30deg; }
+  66% { rotate: -30deg; }
+  100% { rotate:  0deg; }
 }
 
 /* ESTILOS DE BARRA DE NAVEGACIÓN */
@@ -144,40 +143,54 @@ main{
 .exclusive-offers{
   display: flex;
   flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-direction: row;
+  height: 385px;
+  width: 760px;
+  margin-left: 10px;
   text-align: center;
-  padding: 0 10px;
 }
 
 .exclusive-offers h2{
-  width: 100%;
-  color: var(--color-letra2);
+  width: 350px;
+  left: 430px;
+  position: absolute;
+  text-align: center;
+  color: var(--color-fondo3);
+  background-color: var(--color-letra1);
+  font-size: 1.8rem;
+  animation: titulo 7s infinite;
+}
+
+@keyframes titulo{
+  0% {
+    left: 220px ;
+  }
+  50% {
+    left: 650px;
+  }
+  100% {
+    left: 220px;    
+  }
 }
 .art-offer{
-  display: flex;
   background-color:var(--color-fondo3);
   color: var(--color-letra2);
-  flex-direction: row;
-
-  justify-content: space-evenly;
-}
-
-.art-offer>header{
-  width: 300px;
+  position: relative;
+  margin-top: 2.5rem;
+  margin-left: 3px;
 }
 .art-offer>header>h3{
   color: var(--color-letra2);
-  font-size: 1rem;
+  font-size: 1.8rem;
   border-bottom: var(--color-fondo2) dashed 2px;
 }
+
 
 
 .art-offer>img{
   width: 120px;
   height: 120px;  
   /* margin-top: 5px; */
-
 }
 .art-offer>header>p{
   color: var(--color-letra3);
@@ -185,16 +198,15 @@ main{
 }
 
 header>p::after{
-  content: "$"attr(data-art-old-price);
+  content: "$" attr(data-art-old-price);
   color: var(--color-letra1);
   text-decoration: line-through;
   font-size: 1rem;
 }
 
 header>p::before{
-  content: "Ahora:";
+content: "Ahora:  ";
 }
-
 
 .art-details{
   text-align: center;
@@ -207,21 +219,21 @@ header>p::before{
   margin-bottom: 5px;
   font-size: 1.5rem;
 }
-
-
 .art-offer footer{
   display: flex;
   flex-direction:row;
   flex-wrap: nowrap;
   border-top: var(--color-fondo2) solid 1px;
   justify-content: space-around;
+  height: 50px;
+  align-items: center;
 }
 .art-offer footer p{
   font-size: 1.1rem;
 }
 .art-offer footer button{
   width: 70px;
-  /* bottom: 3px; */
+  height: 25px;
   background-color: var(--color-fondo);
   color: var(--color-letra2);
   border-radius: 5px;
@@ -230,11 +242,50 @@ header>p::before{
 .art-offer footer>button:hover{
   background-color: var(--color-fondo2);
   color: var(--color-fondo3);
+  cursor: pointer;
+}
+/* PLANTILLA DE PRODUCTOS */
+
+.cards{
+  margin:10px 10px;
+  width: 250px;
+  height: 210px;
+  transition: 1s;
+  background-color: var(--color-fondo3);
+  --position:1;
+}
+.cards h2{
+  position: absolute;
+}
+.card{
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  background-color: var(--color-fondo2);
+  color: var(--color-fondo3);
+  border: var(--color-fondo3) solid 1px;
+  
+}
+.card>img{
+  width: 50px;
+  position: relative;
 }
 
-/* PLANTILLA DE PRODUCTOS */
-.card{
-    background-color: var(--color-naranja);
+.cards:hover {
+  width: 620px;
+}
+
+.cards:hover .card:nth-of-type(2) {
+  left: 210px;
+}
+
+.cards:hover .card:nth-of-type(3) {
+  left: 410px;
+}
+
+.cards .card:hover {
+  background-color: var(--color-letra3);
+  cursor: pointer;
 }
 
 
@@ -246,17 +297,59 @@ header>p::before{
 }
 
 /* COTIZACION DOLAR */
+.currency{
+  font-size: 1.5rem;
+  border: var(--color-fondo2) solid 1px;
+  background-color: var(--color-fondo3);
+  border-radius: 10%;
+}
 .loading{
-    width: 100px;
+  width: 250px;
+  height: 100px;
+  justify-content: space-around;
+  align-items: flex-end;
 }
 .loading-item{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: lightblue;
+  width: 50px;
+  height: 50px;
+  margin-right: 0;  
+  background-color: lightblue;
+  animation: dolar 1s linear infinite;
+  border-radius: 0;
 }
 .currency>p{
     display: none;
+}
+
+
+.loading-item:nth-child(1) {
+  background-color: var(--color-letra1);
+  animation-delay: 0.1s;
+}
+.loading-item:nth-child(2) {
+  animation-delay: 0.3s;
+  background-color: var(--color-letra3);
+}
+
+.loading-item:nth-child(3) {
+  animation-delay: 0.5s;
+  background-color: var(--color-fondo2);
+}
+
+
+
+@keyframes dolar{
+  0% {
+    height: 30px;
+  }
+
+  50% {
+    height:  100px;
+  }
+
+  100% {
+    height: 30px;
+  }
 }
 
 /* menu de contacto en posicion fixed */
@@ -268,6 +361,15 @@ header>p::before{
   border-radius: 10px;
   background-color: var(--color-fondo3);
   left: 870px;
+  transition: width 2s ease-out;
+}
+
+.contact-support:hover{
+  background-color: var(--color-letra3);
+  color: var(--color-fondo3);
+  width: 200px;
+  left: 790px;
+  cursor: pointer;
 }
 
 .contact-text{
@@ -281,97 +383,43 @@ header>p::before{
 }
 
 .activity{
-  position:relative;
   background-color: var(--color-fondo3);
   width: 750px;
   margin-left: 20px;
-  
-}
-.activity h2{
-  text-align: center;
-  color: var(--color-letra3);
-  margin-bottom: 20px;
+  border: none;
 }
 
 table{
+  background-color: var(--color-fondo2);
+  color: var(--color-fondo3);
   width: 730px;
   text-align: center;
+  border-collapse: collapse;
+  margin-left:10px;
 }
 
-/* .cards{
-  width: 400px;
-  height: 350px;
+.activity h2{
   text-align: center;
-  background-color: var(--color-fondo3);
-  left: 20px;
-  bottom: 50px;
-  position: relative;
-  
-}
-
-.card{
-  width: 250px;
-  height: 150px;
-  overflow: hidden; 
-  position: relative; 
-  border: 2px solid var(--color-letra3);
-  position: absolute;
-  display: flex;
-}
-
-.card >img:hover{
-  box-shadow: var(--color-fondo2);
-  transition: 2s;
-}
-.card>img{
-  width: 250px;
-  height: 150px;
-  border-radius: 5px ;
-  position: absolute;
-  top: 0;
-} */
-
-/* .cards {
-  position: relative;
-  height: 300px;
-  width: 350px;
-  text-align: center;
-}
-
-.card {
-  width: 300px;
-  height: 250px;
-  border-radius: 10px;
-  overflow: hidden;
-  position: absolute;
-
-}
-
-.card>img{
-  width: 250px;
-  height: 180px;
-
-}
-
-.card:hover{
-  top: -1em;
-  
-}
-
-
-
-.card h3{
-  font-weight: 600;
-  color: var(--color-letra1);
-
-}
-
-.card>p{
-  border-radius: 25px;
   color: var(--color-letra3);
-  font-weight: 600;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
 
-} */
+
+.activity thead th{
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.activity tbody tr:hover{
+  background-color: var(--color-letra3);
+  color:var(--color-fondo3);
+}
+
+.activity td{
+  border-top: var(--color-fondo3) solid 1px;
+}
 
 /* CONTROL DE STOCK */
 .stock-control{
@@ -397,7 +445,7 @@ table{
   margin-right: 10px;
   width: 160px;
   height: 90px;
-  color: var(--color-fondo);
+  color: var(--color-fondo3);
   border-radius: 10px;
   padding: 10px 10px;
 }
@@ -425,12 +473,7 @@ table{
 }
 
 /* COTIZACION DEL DOLAR */
-/* .currency{
-  width: 300px;
-  height: 150px;
-  position: relative;
 
-} */
 
 /* FOOTER */
 .main-footer{

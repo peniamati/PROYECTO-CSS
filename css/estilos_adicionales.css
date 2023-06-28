@@ -6,79 +6,80 @@ Autores: Peña Matias - Macchia Sebastian
 
 /* ORGANIZAR LAS DECLARACIONES EN BLOQUES*/
 
-
-/* ESTILOS GENERALES*/
 *{
   max-width: 1000px;
 }
 /* Colores */
-/* Color negro */
+
+/* Blanco ice */
 :root{
-  --color-letra1: #d90429;
-}
-/* Color azul */
-:root{
-  --color-fondo2: #14213d;
+  --color-letra1: #e7f3ff;
 }
 
+/* Celeste */
+:root{
+  --color-letra2: #12a8e0;
+}
+
+
+/* Gris claro */
+:root{
+  --color-fondo: #959492;
+}
 /* Gris oscuro */
 :root{
-  --color-fondo: #8d99ae;
+  --color-fondo2: #42413d;
 }
-
-/* Naranja */
-:root{
-  --color-letra3: #386641;
-}
-
 /*  Amarillo */
 :root{
-  --color-fondo3: #e5e5e5;
+  --color-fondo3: #ffce2b;
 }
-
-/* Crema */
+/* Negro */
 :root{
-  --color-letra2: #372549;
+  --color-fondo4: black;
 }
 
+
+
+/* Body */
 body{
   height: 100%;
   display: flex;
   flex-wrap: wrap;
 }
 
-
-/* ESTILOS DE CABECERA PRINCIPAL*/
+/* ESTILOS GENERALES*/
+/* ------------------ ESTILOS DE HEADER ---------------*/
 .main-header{
-  background-color: var(--color-fondo2);
-  flex-wrap: wrap;
-  flex-direction: column;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  background: linear-gradient(45deg,var(--color-letra2), var(--color-fondo2));
   width: 100%;
-}
-
-.main-header img{
-  height: 100%;
-  position: absolute;
-  left: 300px;
-  width: 85px;
-  height: auto;
-  
-}
-
-.main-header h1{
-  left: 15px;
-  position: absolute;
+  top: 0;
+  position: fixed;
+  z-index: 1;
   text-align: center;
-  color: var(--color-letra1);
 }
+
+/* Imagen header */
+.main-header img{
+  position: absolute;
+  left: 60px;
+  width: 85px;
+  filter: brightness(0) invert(1);
+  bottom: 10px;
+}
+
+/* Titulo header */
+.main-header h1{
+  margin-top: 25px;
+  color: var(--color-fondo3);
+}
+/* Notificacion header */
 .notifications{
   color: var(--color-letra1);
   border-radius: 10px;
   position: absolute;
   left: 900px;
+  bottom: 20px;
 }
 
 .notifications .notification-counter {
@@ -98,44 +99,49 @@ body{
   100% { rotate:  0deg; }
 }
 
-/* ESTILOS DE BARRA DE NAVEGACIÓN */
+/* ---------------- ESTILOS DE BARRA DE NAVEGACIÓN --------------- */
 .main-menu{
-  background-color: var(--color-fondo3); 
+  background: linear-gradient(90deg,var(--color-letra2), var(--color-fondo2));
   width: 220px;
-  padding: 5px 0px 5px 5px;
-  justify-content: space-between;
+  top: 80px;
+  padding: 5px 5px 5px 5px;
+  position: fixed;
+  height: 87vh;
 }  
 
-
-.menu-group > h2{
-  padding-top: 10px;
-  padding-left: 20px;
-  font-size: 25px;
-}
 .menu-group{
   display: flex;
   flex-direction: column;
-  color: var(--color-letra2);
+  color: var(--color-fondo3);
+}
+/*  Titulos barra de navegacion */
+.menu-group > h2{
+  padding-top: 8px;
+  padding-left: 25px;
+  font-size: 25px;
+  border-bottom: var(--color-letra1)  dashed 2px;
 }
 
-.notifications{
-  position: absolute;
-}
+/* Etiquetas nav */
 .menu-group > a{
   text-decoration: none;
-  padding: 10px 5px;
   color: var(--color-letra3);
+  padding: 5px 5px;
 }
 
 
 .menu-group > a:hover{  
-  background-color: var(--color-fondo2);
-  font-size: 15px;
+  background-color: var(--color-fondo4);
+  color: var(--color-fondo3);
+  font-size: 14px;
 }
 
+/* --------------------- MAIN -------------------------*/
 main{
   width: 780px;
-  background-color: var(--color-fondo);
+  background-color: var(--color-fondo2);
+  margin-left: 220px;
+  margin-top: 80px;
 }
 
 
@@ -145,8 +151,7 @@ main{
   flex-wrap: nowrap;
   flex-direction: row;
   height: 385px;
-  width: 760px;
-  margin-left: 10px;
+  width: 770px;
   text-align: center;
 }
 
@@ -155,12 +160,13 @@ main{
   left: 430px;
   position: absolute;
   text-align: center;
-  color: var(--color-fondo3);
-  background-color: var(--color-letra1);
+  color: var(--color-fondo4);
+  background-color: var(--color-fondo3);
   font-size: 1.8rem;
   animation: titulo 7s infinite;
 }
 
+/*  Animación título */
 @keyframes titulo{
   0% {
     left: 220px ;
@@ -172,34 +178,40 @@ main{
     left: 220px;    
   }
 }
+
+/* Clase de los artículos */
 .art-offer{
-  background-color:var(--color-fondo3);
-  color: var(--color-letra2);
+  background:linear-gradient(var(--color-fondo),var(--color-letra2));
+  color: var(--color-fondo4);
   position: relative;
   margin-top: 2.5rem;
-  margin-left: 3px;
+  left: 10px;
+  margin-right: 10px;
 }
+
+/*  Títulos de los articulos */
 .art-offer>header>h3{
-  color: var(--color-letra2);
-  font-size: 1.8rem;
+  color: var(--color-letra1);
+  font-size: 1.4rem;
   border-bottom: var(--color-fondo2) dashed 2px;
+  text-align: center;
+  height: 55px;
 }
 
-
-
+/*  Imagenes de los articulos */
 .art-offer>img{
   width: 120px;
   height: 120px;  
-  /* margin-top: 5px; */
 }
+
 .art-offer>header>p{
-  color: var(--color-letra3);
+  color: var(--color-fondo3);
   font-size: 1.5rem;
 }
 
 header>p::after{
   content: "$" attr(data-art-old-price);
-  color: var(--color-letra1);
+  color: var(--color-fondo2);
   text-decoration: line-through;
   font-size: 1rem;
 }
@@ -208,6 +220,7 @@ header>p::before{
 content: "Ahora:  ";
 }
 
+/* Clases de la seccion características de cada articulo */
 .art-details{
   text-align: center;
   border-top: var(--color-fondo2) solid 1px;
@@ -219,6 +232,8 @@ content: "Ahora:  ";
   margin-bottom: 5px;
   font-size: 1.5rem;
 }
+
+/* Footer de cada articulo */
 .art-offer footer{
   display: flex;
   flex-direction:row;
@@ -234,159 +249,25 @@ content: "Ahora:  ";
 .art-offer footer button{
   width: 70px;
   height: 25px;
-  background-color: var(--color-fondo);
-  color: var(--color-letra2);
+  background-color: var(--color-fondo2);
+  color: var(--color-fondo3);
   border-radius: 5px;
 }
 
 .art-offer footer>button:hover{
-  background-color: var(--color-fondo2);
-  color: var(--color-fondo3);
-  cursor: pointer;
-}
-/* PLANTILLA DE PRODUCTOS */
-
-.cards{
-  margin:10px 10px;
-  width: 250px;
-  height: 210px;
-  transition: 1s;
-  background-color: var(--color-fondo3);
-  --position:1;
-}
-.cards h2{
-  position: absolute;
-}
-.card{
-  width: 200px;
-  height: 100px;
-  text-align: center;
-  background-color: var(--color-fondo2);
-  color: var(--color-fondo3);
-  border: var(--color-fondo3) solid 1px;
-  
-}
-.card>img{
-  width: 50px;
-  position: relative;
-}
-
-.cards:hover {
-  width: 620px;
-}
-
-.cards:hover .card:nth-of-type(2) {
-  left: 210px;
-}
-
-.cards:hover .card:nth-of-type(3) {
-  left: 410px;
-}
-
-.cards .card:hover {
-  background-color: var(--color-letra3);
-  cursor: pointer;
-}
-
-
-/* CONTROL DE STOCK */
-
-.stock-alert{
-    width: 110px;
-    height: 60px;
-}
-
-/* COTIZACION DOLAR */
-.currency{
-  font-size: 1.5rem;
-  border: var(--color-fondo2) solid 1px;
-  background-color: var(--color-fondo3);
-  border-radius: 10%;
-}
-.loading{
-  width: 250px;
-  height: 100px;
-  justify-content: space-around;
-  align-items: flex-end;
-}
-.loading-item{
-  width: 50px;
-  height: 50px;
-  margin-right: 0;  
-  background-color: lightblue;
-  animation: dolar 1s linear infinite;
-  border-radius: 0;
-}
-.currency>p{
-    display: none;
-}
-
-
-.loading-item:nth-child(1) {
   background-color: var(--color-letra1);
-  animation-delay: 0.1s;
-}
-.loading-item:nth-child(2) {
-  animation-delay: 0.3s;
-  background-color: var(--color-letra3);
-}
-
-.loading-item:nth-child(3) {
-  animation-delay: 0.5s;
-  background-color: var(--color-fondo2);
-}
-
-
-
-@keyframes dolar{
-  0% {
-    height: 30px;
-  }
-
-  50% {
-    height:  100px;
-  }
-
-  100% {
-    height: 30px;
-  }
-}
-
-/* menu de contacto en posicion fixed */
-.contact-support{
-  position: fixed;
-  bottom: 50px;
-  border: var(--color-fondo2) solid 3px;
-  color: var(--color-letra2);
-  border-radius: 10px;
-  background-color: var(--color-fondo3);
-  left: 870px;
-  transition: width 2s ease-out;
-}
-
-.contact-support:hover{
-  background-color: var(--color-letra3);
-  color: var(--color-fondo3);
-  width: 200px;
-  left: 790px;
+  color: var(--color-fondo4);
   cursor: pointer;
 }
 
-.contact-text{
-  position: relative;
-  top: -6px;
-  right: 2px;
-}
-/* FOOTER */
-.main-footer{
-    background-color: violet;
-}
-
+/* ---------------------- Activity (Actividad reciente) --------------------------------*/
 .activity{
   background-color: var(--color-fondo3);
-  width: 750px;
-  margin-left: 20px;
+  width: 760px;
+  height: 180px;
+  margin-left: 10px;
   border: none;
+  margin-top: 10px;
 }
 
 table{
@@ -413,32 +294,103 @@ table{
 }
 
 .activity tbody tr:hover{
-  background-color: var(--color-letra3);
-  color:var(--color-fondo3);
+  background: linear-gradient(90deg,var(--color-letra1), var(--color-letra2));
+  color: var(--color-fondo4);
+  cursor: pointer;
 }
 
 .activity td{
   border-top: var(--color-fondo3) solid 1px;
 }
 
-/* CONTROL DE STOCK */
+
+/* -------------------- Tarjetas de crédito ---------------------- */
+.cards{
+  margin-top:10px;
+  width: 250px;
+  height: 240px;
+  transition: 1s;
+  background-image: url(https://i.ibb.co/VtGc9Fz/billetera-cerrada.jpg);
+  background-size: cover;
+  text-align: center;
+  left: 260px;
+}
+.cards h2{
+  margin-top: 10px;
+  position: absolute;
+  color: var(--color-letra2);
+  font-size: 2rem;
+}
+.card{
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  display: none;
+  color: var(--color-fondo3);
+  border: var(--color-fondo3) solid 1px;
+  background-color: var(--color-fondo2);
+}
+.card>img{
+  width: 50px;
+  position: relative;
+}
+
+.cards:hover {
+  width: 620px;
+  left: 80px;
+  background-image: url(https://i.ibb.co/KmkmHgc/billetera-abierta.jpg);
+}
+
+.cards:hover .card:nth-of-type(1) {
+  left:5px;
+  display: block;
+}
+.cards:hover .card:nth-of-type(2) {
+  left: 209px;
+  display: block;
+}
+
+.cards:hover .card:nth-of-type(3) {
+  left: 414px;
+  display: block;
+}
+
+.cards .card:hover {
+  background-color: var(--color-letra2);
+  color: var(--color-letra1);
+  border: var(--color-letra1) solid 2px;
+  cursor: pointer;
+}
+.cards:hover h2 {
+  color: var(--color-letra1);
+  margin-top: 0;
+}
+
+
+
+/* ----------------------------- Stock Control (Control de Stocks) -------------------------------------*/
+/* Clase sección principal */
 .stock-control{
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  width: 550px;
+  width: 525px;
   height: 150px;
   border: var(--color-fondo2) solid 1px;
   background-color: var(--color-fondo3);
   color: var(--color-letra3);
-  margin-left: 10px;
   border-radius: 25px ;
   position: relative;
+  margin: 10px 10px;
 }
+
 .stock-control>h2{
   position: absolute;
   text-align: center;
+  font-weight: bold;
 }
+
+/* Clase de los articulos */
 .stock-alert{
   margin-top: 30px;
   margin-left: 10px;
@@ -463,24 +415,115 @@ table{
 
 }
 .stock-alert:nth-of-type(1){
-  background-color: var(--color-letra1);
+  background-color: var(--color-fondo4);
 }
 .stock-alert:nth-of-type(2){
-  background-color: var(--color-letra2);
+  background-color: var(--color-fondo2);
 }
 .stock-alert:nth-of-type(3){
-  background-color: var(--color-letra3);
+  background-color: var(--color-fondo);
 }
 
-/* COTIZACION DEL DOLAR */
 
 
-/* FOOTER */
-.main-footer{
+/* ---------------------- Currency (Cotización del dolar) ----------------------------- */
+.currency{
+  font-size: 1.2rem;
+  border: var(--color-fondo2) solid 1px;
+  background-color: var(--color-fondo3);
+  border-radius: 10%;
+  text-align: center;
+  color: var(--color-letra3);
+  height: 150px;
+  margin-top: 10px;
+  margin-left: 2px;
+}
+
+/*  Clase barras cargando */
+.loading{
+  width: 220px;
+  height: 100px;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.loading-item{
+  width: 50px;
+  height: 50px;
+  margin-right: 0;  
+  background-color: lightblue;
+  animation: dolar 1s linear infinite;
+  border-radius: 0;
+}
+.currency>p{
+    display: none;
+}
+
+.currency>h2{
+  font-weight: bold;
+}
+
+
+.loading-item:nth-child(1) {
+  background-color: var(--color-fondo);
+  animation-delay: 0.1s;
+}
+.loading-item:nth-child(2) {
+  animation-delay: 0.3s;
   background-color: var(--color-fondo2);
-  color: var(--color-letra1);
+}
+
+.loading-item:nth-child(3) {
+  animation-delay: 0.5s;
+  background-color: var(--color-fondo4);
+}
+
+
+
+@keyframes dolar{
+  0% {
+    height: 30px;
+  }
+
+  50% {
+    height:  100px;
+  }
+
+  100% {
+    height: 30px;
+  }
+}
+
+/* --------------------- Contact Suport (Contacto de Soporte)*/
+.contact-support{
+  position: fixed;
+  bottom: 20px;
+  border: var(--color-letra1) solid 3px;
+  color: var(--color-fondo4);
+  border-radius: 10px;
+  background-color: var(--color-letra2);
+  left: 870px;
+  transition: width 2s ease-out;
+}
+
+.contact-support:hover{
+  width: 200px;
+  left: 790px;
+  cursor: pointer;
+}
+
+.contact-text{
+  position: relative;
+  top: -6px;
+  right: 2px;
+}
+
+
+/* ---------------- FOOTER  -----------------------------*/
+.main-footer{
+  background: linear-gradient(30deg,var(--color-fondo4), var(--color-fondo));
+  color: var(--color-letra2);
   font-size: 1.5rem;
-  width: 100%; 
+  width: 780px;
+  margin-left: 220px; 
   text-align: center;
 }
-/* ESTILOS DE ...*/ 
